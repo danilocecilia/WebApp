@@ -1,0 +1,17 @@
+﻿<div ng-controller="form">
+    <h1>admin/pizzas/form</h1>
+
+    <label for="Name">Nome</label>
+    <input id="Name" type="text" ng-model="pizza.Name" />
+
+    <label for="Description">Descrição</label>
+    <textarea id="Description" ng-model="pizza.Description"></textarea>
+
+    <label for="Price">Preço</label>
+    <input id="Price" ng-model="pizza.Price" />
+
+    <label for="Img">Imagem</label>
+    <input id="Img" type="file" accept="image/*" ng-model="pizza.Img"/>
+
+    <input type="submit" value="Salvar" ng-click="save(pizza)" />
+</div>

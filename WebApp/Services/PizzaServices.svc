@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WebApp.Services.PizzaServices" CodeBehind="PizzaServices.svc.cs" %>

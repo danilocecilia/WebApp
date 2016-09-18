@@ -1,0 +1,15 @@
+﻿<div ng-controller="index">
+    <h1>admin/pizzas/index</h1>
+
+    <a href="#pizzas/novo">Nova</a>
+
+    <ul>
+        <li ng-repeat="pizza in pizzas">
+            <p><a href="#pizzas/editar/{{pizza.Id}}">{{pizza.Name}}</a></p>
+            <a href="#pizzas/editar/{{pizza.Id}}">
+                <img ng-src="{{pizza.ImgUrl}}" alt="{{pizza.Name}}" />
+            </a>
+            <p><a href="#pizzas/editar/{{pizza.Id}}">{{pizza.Description}}</a></p>
+        </li>
+    </ul>
+</div>
