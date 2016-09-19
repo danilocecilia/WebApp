@@ -131,6 +131,7 @@
     <Content Include="App\shared.js" />
     <Content Include="Content\css\layouts\marketing-old-ie.css" />
     <Content Include="Content\css\layouts\marketing.css" />
+    <Content Include="Content\css\site.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\img\common\file-icons.png" />
     <Content Include="packages.config" />

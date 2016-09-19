@@ -1,0 +1,15 @@
+﻿#admin-wrapper { margin: 65px 30px 0 30px;  }
+
+
+h1, h2, h3, h4, h5, h6 { font-family: sans-serif }
+
+
+.pizza { border-bottom: 5px solid #5e5e5e; margin-bottom: 10px; }
+.pizza a { color: #545454; text-decoration: none; }
+
+.pizza:nth-child(2n+1) { border-color: #67c2f0; }
+.pizza:nth-child(2n+2) { border-color: #8058a5; }
+.pizza:nth-child(2n+3) { border-color: #5eb95e; }
+.pizza:nth-child(2n+4) { border-color: #dd514c; }
+.pizza:nth-child(2n+5) { border-color: #f37b1d; }
+.pizza:nth-child(2n+6) { border-color: #fad232; }

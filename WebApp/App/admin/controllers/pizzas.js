@@ -18,7 +18,7 @@
 
                     xhr.addEventListener(
                         "load",
-                        function (e) { $scope.pizza.FileKey = this.responseText; },
+                        function (e) { $scope.pizza.FileKey = JSON.parse(this.responseText); },
                         false);
 
                     xhr.open("POST", url, true);

@@ -1,17 +1,24 @@
 ﻿<div ng-controller="form">
-    <h1>admin/pizzas/form</h1>
+    <h1>Cadastro</h1>
 
-    <label for="Name">Nome</label>
-    <input id="Name" type="text" ng-model="pizza.Name" />
+    <form class="pure-form pure-form-stacked">
+        <fieldset>
+            <legend>Detalhes</legend>
 
-    <label for="Description">Descrição</label>
-    <textarea id="Description" ng-model="pizza.Description"></textarea>
+            <label for="Name">Nome</label>
+            <input id="Name" type="text" ng-model="pizza.Name" />
 
-    <label for="Price">Preço</label>
-    <input id="Price" ng-model="pizza.Price" />
+            <label for="Description">Descrição</label>
+            <textarea id="Description" ng-model="pizza.Description"></textarea>
 
-    <label for="Img">Imagem</label>
-    <input id="Img" type="file" accept="image/*" ng-model="pizza.Img"/>
+            <label for="Price">Preço</label>
+            <input id="Price" ng-model="pizza.Price" />
 
-    <input type="submit" value="Salvar" ng-click="save(pizza)" />
+            <label for="Img">Imagem</label>
+            <input id="Img" type="file" accept="image/*" ng-model="pizza.Img" />
+
+            <a class="pure-button" href="#pizzas">Voltar</a>
+            <input type="submit" value="Salvar" class="pure-button pure-button-primary" ng-click="save(pizza)" />
+        </fieldset>
+    </form>
 </div>

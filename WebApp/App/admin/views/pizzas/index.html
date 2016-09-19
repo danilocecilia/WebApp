@@ -1,16 +1,17 @@
 ﻿<div ng-controller="index">
-    <h1>admin/pizzas/index</h1>
+    <h1>Pizzas cadastradas</h1>
 
-    <a href="#pizzas/novo">Nova</a>
+    <a href="#pizzas/novo" class="pure-button pure-button-primary">Cadastrar novo</a>
 
-    <ul>
-        <li ng-repeat="pizza in pizzas">
-            <p><a href="#pizzas/editar/{{pizza.Id}}">{{pizza.Name}}</a></p>
+    <br />
+
+    <div class="pure-g">
+        <div class="pizza is-center pure-u-1-3" ng-repeat="pizza in pizzas">
+            <h2><a href="#pizzas/editar/{{pizza.Id}}">{{pizza.Name}}</a></h2>
             <a href="#pizzas/editar/{{pizza.Id}}">
                 <img ng-src="{{pizza.ImgUrl}}" alt="{{pizza.Name}}" />
-                {{pizza.ImgUrl}}
             </a>
             <p><a href="#pizzas/editar/{{pizza.Id}}">{{pizza.Description}}</a></p>
-        </li>
-    </ul>
+        </div>
+    </div>
 </div>
