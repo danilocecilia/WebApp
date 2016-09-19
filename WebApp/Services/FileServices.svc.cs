@@ -1,24 +1,36 @@
 ﻿namespace WebApp.Services
 {
+    using System;
     using System.IO;
-    using System.ServiceModel;
     using System.ServiceModel.Activation;
 
-    [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple,
-                 InstanceContextMode = InstanceContextMode.PerCall,
-                 IgnoreExtensionDataObject = true,
-                 IncludeExceptionDetailInFaults = true)]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class FileServices : IFileServices
     {
-        public void Upload(Stream stream)
+        public string Upload(string filename, Stream stream)
         {
-            var filepath = Path.Combine(@"C:\Users\lucas\Desktop\", /*filename*/"champs.JPG");
+            var fileKey = Path.Combine(DateTime.Now.Ticks.ToString(), filename);
+            var filepath = Path.Combine(Environment.CurrentDirectory, "Uploads", fileKey);
+            var directory = Path.GetDirectoryName(filepath);
+
+            if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
+
             using (var fileStream = new FileStream(filepath, FileMode.OpenOrCreate, FileAccess.Write))
-            {
                 stream.CopyTo(fileStream);
-                fileStream.Flush();
-            }
+
+            return fileKey;
+        }
+
+        public Stream Download(string fileKey)
+        {
+            var filepath = Path.Combine(Environment.CurrentDirectory, "Uploads", fileKey);
+
+            return new FileStream(filepath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+        }
+
+        internal static string GetPublicResource(string fileKey)
+        {
+            return $"/Services/FileServices.svc/Download?fileKey={fileKey}";
         }
     }
 }

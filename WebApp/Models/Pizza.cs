@@ -2,6 +2,8 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using Services;
 
     public class Pizza
     {
@@ -25,8 +27,9 @@
         [StringLength(128)]
         public string FileKey { get; set; }
 
-        public Uri ImgUrl { get { return new Uri("http://www.iconshock.com/img_jpg/REALVISTA/food/jpg/256/pizza_icon.jpg"); } }
+        public DateTime CreatedAt { get; set; }
 
-        public DateTime CreatedAt { get; private set; }
+        [NotMapped]
+        public string ImgUrl { get { return FileServices.GetPublicResource(FileKey); } set { } }
     }
 }

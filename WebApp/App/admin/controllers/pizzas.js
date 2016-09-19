@@ -12,20 +12,24 @@
             .addEventListener(
                 "change",
                 function (fileEvent) {
-                    var formData = new FormData();
                     var xhr = new XMLHttpRequest();
                     var file = fileEvent.target.files[0];
-                    var filename = file.name;
+                    var url = "/Services/FileServices.svc/UploadFile?filename=" + file.name;
 
-                    var url = "/Services/FileServices.svc/Upload";
-
+                    xhr.onreadystatechange = function () {
+                        var success = this.readyState == 4 && this.status == 200;
+                        if (success) {
+                            $scope.pizza.FileKey = this.responseText;
+                        }
+                    };
+                    //xhr.upload.addEventListener('progress', uploadProgress, false);
                     xhr.open("POST", url, true);
                     xhr.send(file);
                 },
                 false);
-
+        
         $scope.pizza = {};
-
+        
         $scope.save = function (pizza) {
             $http
                .post("/Services/PizzaServices.svc/Save", { pizza: pizza })

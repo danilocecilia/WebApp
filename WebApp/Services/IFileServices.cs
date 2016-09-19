@@ -8,8 +8,11 @@
     public interface IFileServices
     {
         [OperationContract]
-        [DataContractFormat]
-        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Bare, ResponseFormat = WebMessageFormat.Json)]
-        void Upload(Stream stream);
+        [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, UriTemplate = "/UploadFile?fileName={fileName}")]
+        string Upload(string filename, Stream stream);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET")]
+        Stream Download(string fileKey);
     }
 }
