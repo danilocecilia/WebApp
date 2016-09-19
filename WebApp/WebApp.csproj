@@ -124,8 +124,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\admin\controllers\pizzas.js" />
-    <Content Include="App\admin\views\clients\index.html" />
-    <Content Include="App\admin\views\orders\index.html" />
     <Content Include="App\admin\views\pizzas\form.html" />
     <Content Include="App\admin\views\pizzas\index.html" />
     <Content Include="App\admin\routes.js" />
