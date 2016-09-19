@@ -16,14 +16,13 @@
                     var file = fileEvent.target.files[0];
                     var url = "/Services/FileServices.svc/UploadFile?filename=" + file.name;
 
-                    xhr.onreadystatechange = function () {
-                        var success = this.readyState == 4 && this.status == 200;
-                        if (success) {
-                            $scope.pizza.FileKey = this.responseText;
-                        }
-                    };
-                    //xhr.upload.addEventListener('progress', uploadProgress, false);
+                    xhr.addEventListener(
+                        "load",
+                        function (e) { $scope.pizza.FileKey = this.responseText; },
+                        false);
+
                     xhr.open("POST", url, true);
+
                     xhr.send(file);
                 },
                 false);
