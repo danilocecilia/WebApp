@@ -129,7 +129,10 @@
     <Content Include="App\admin\routes.js" />
     <Content Include="App\root\routes.js" />
     <Content Include="App\shared.js" />
+    <Content Include="css\layouts\marketing-old-ie.css" />
+    <Content Include="css\layouts\marketing.css" />
     <Content Include="Global.asax" />
+    <Content Include="img\common\file-icons.png" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
