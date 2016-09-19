@@ -1,16 +1,19 @@
 ﻿namespace WebApp.Services
 {
     using System;
+    using System.Configuration;
     using System.IO;
     using System.ServiceModel.Activation;
 
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class FileServices : IFileServices
     {
+        private static string UploadsDirecotry = ConfigurationManager.AppSettings["UploadsDirectory"];
+
         public string Upload(string filename, Stream stream)
         {
             var fileKey = Path.Combine(DateTime.Now.Ticks.ToString(), filename);
-            var filepath = Path.Combine(Environment.CurrentDirectory, "Uploads", fileKey);
+            var filepath = Path.Combine(UploadsDirecotry, fileKey);
             var directory = Path.GetDirectoryName(filepath);
 
             if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
@@ -23,7 +26,7 @@
 
         public Stream Download(string fileKey)
         {
-            var filepath = Path.Combine(Environment.CurrentDirectory, "Uploads", fileKey);
+            var filepath = Path.Combine(UploadsDirecotry, fileKey);
 
             return new FileStream(filepath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
         }

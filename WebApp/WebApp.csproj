@@ -132,9 +132,21 @@
     <Content Include="Content\css\layouts\marketing-old-ie.css" />
     <Content Include="Content\css\layouts\marketing.css" />
     <Content Include="Content\css\site.css" />
+    <Content Include="Content\img\pizzas\atum 400x300.jpg" />
+    <Content Include="Content\img\pizzas\calabresa 400x300.jpg" />
+    <Content Include="Content\img\pizzas\frango com catupiry 400x300.jpg" />
+    <Content Include="Content\img\pizzas\mussarela 400x300.jpg" />
+    <Content Include="Content\img\pizzas\pepperoni 400x300.jpg" />
+    <Content Include="Content\img\pizzas\rucula com tomate seco 400x300.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\img\common\file-icons.png" />
     <Content Include="packages.config" />
+    <None Include="Resources\atum_400x300.jpg" />
+    <None Include="Resources\calabresa_400x300.jpg" />
+    <None Include="Resources\frango_com_catupiry_400x300.jpg" />
+    <None Include="Resources\mussarela_400x300.jpg" />
+    <None Include="Resources\pepperoni_400x300.jpg" />
+    <None Include="Resources\rucula_com_tomate_seco_400x300.jpg" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -160,6 +172,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_LocalResources\Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
     <Compile Include="Data\WebAppContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -185,6 +202,10 @@
     <Folder Include="App\root\views\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="App_LocalResources\Images.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609181338200_Initial.resx">
       <DependentUpon>201609181338200_Initial.cs</DependentUpon>
     </EmbeddedResource>
