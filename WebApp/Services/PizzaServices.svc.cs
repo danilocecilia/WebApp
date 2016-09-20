@@ -15,11 +15,9 @@
             using (var db = new WebAppContext())
             {
                 var isNew = pizza.Id == 0;
-
+                
                 db.Pizzas.Attach(pizza);
-
                 db.Entry(pizza).State = isNew ? EntityState.Added : EntityState.Modified;
-
                 db.SaveChanges();
             }
         }

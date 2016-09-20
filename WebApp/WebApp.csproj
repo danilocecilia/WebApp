@@ -127,8 +127,9 @@
     <Content Include="App\admin\views\pizzas\form.html" />
     <Content Include="App\admin\views\pizzas\index.html" />
     <Content Include="App\admin\routes.js" />
+    <Content Include="App\root\controllers\cardapio.js" />
     <Content Include="App\root\routes.js" />
-    <Content Include="App\shared.js" />
+    <Content Include="App\root\views\cardapio\index.html" />
     <Content Include="Content\css\layouts\marketing-old-ie.css" />
     <Content Include="Content\css\layouts\marketing.css" />
     <Content Include="Content\css\site.css" />
@@ -142,6 +143,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\img\common\file-icons.png" />
     <Content Include="packages.config" />
+    <Content Include="App\root\views\landing.html" />
+    <Content Include="admin.cshtml" />
     <None Include="Resources\atum_400x300.jpg" />
     <None Include="Resources\calabresa_400x300.jpg" />
     <None Include="Resources\frango_com_catupiry_400x300.jpg" />
@@ -153,7 +156,6 @@
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="index.cshtml" />
     <Content Include="Scripts\angular-route.min.js.map" />
-    <Content Include="admin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -198,10 +200,7 @@
       <DependentUpon>PizzaServices.svc</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App\root\controllers\" />
-    <Folder Include="App\root\views\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="App_LocalResources\Images.resx">
       <Generator>ResXFileCodeGenerator</Generator>

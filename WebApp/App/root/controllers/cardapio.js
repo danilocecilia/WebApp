@@ -1,4 +1,4 @@
-﻿angular.module("app")
+﻿angular.module("root")
     .controller("index", function ($scope, $http) {
         $http
             .get("/Services/PizzaServices.svc/GetAll")
