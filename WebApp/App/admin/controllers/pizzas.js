@@ -5,7 +5,7 @@
             .then(function (response) {
                 $scope.pizzas = response.data.GetAllResult;
             });
-
+        alert('oi');
         $scope.delete = function (id, index) {
             if (confirm("Você possui absoluta certeza de deletar essa deliciosa pizza? okay, mas em caso de dúvidas isso pode ser desfeito mais tarde.")) {
                 $http
