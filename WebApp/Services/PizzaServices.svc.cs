@@ -44,7 +44,12 @@
         {
             using (var db = new WebAppContext())
             {
-                db.Pizzas.Remove(db.Pizzas.Single(d => d.Id == id));
+                var pizza = db.Pizzas.Single(d => d.Id == id);
+
+                FileServices.Delete(pizza.FileKey);
+
+                db.Pizzas.Remove(pizza);
+
                 db.SaveChanges();
             }
         }

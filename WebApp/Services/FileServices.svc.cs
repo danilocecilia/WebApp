@@ -24,16 +24,16 @@
             return fileKey;
         }
 
-        public Stream Download(string fileKey)
-        {
-            var filepath = Path.Combine(UploadsDirecotry, fileKey);
+        public Stream Download(string fileKey) =>
+            new FileStream(GetFilePath(fileKey), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
-            return new FileStream(filepath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-        }
+        private static string GetFilePath(string fileKey) => 
+            Path.Combine(UploadsDirecotry, fileKey);
 
-        internal static string GetPublicResource(string fileKey)
-        {
-            return $"/Services/FileServices.svc/Download?fileKey={fileKey}";
-        }
+        internal static string GetPublicResource(string fileKey) => 
+            $"/Services/FileServices.svc/Download?fileKey={fileKey}";
+
+        internal static void Delete(string fileKey) =>
+            File.Delete(GetFilePath(fileKey));
     }
 }
