@@ -44,7 +44,7 @@
         {
             using (var db = new WebAppContext())
             {
-                db.Pizzas.Remove(db.Pizzas.FirstOrDefault(d => d.Id == id));
+                db.Pizzas.Remove(db.Pizzas.Single(d => d.Id == id));
                 db.SaveChanges();
             }
         }

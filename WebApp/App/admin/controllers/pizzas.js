@@ -5,6 +5,16 @@
             .then(function (response) {
                 $scope.pizzas = response.data.GetAllResult;
             });
+
+        $scope.delete = function (id, index) {
+            if (confirm("Você possui absoluta certeza de deletar essa deliciosa pizza? okay, mas em caso de dúvidas isso pode ser desfeito mais tarde.")) {
+                $http
+                   .post("/Services/PizzaServices.svc/Delete", { id: id })
+                   .then(function (response) {
+                       $scope.pizzas.splice(index, 1);
+                   });
+            }
+        };
     })
     .controller("form", ["$scope", "$http", "$routeParams", "$location", function ($scope, $http, $routeParams, $location) {
         document

@@ -138,6 +138,7 @@
     <Content Include="Content\img\pizzas\mussarela 400x300.jpg" />
     <Content Include="Content\img\pizzas\pepperoni 400x300.jpg" />
     <Content Include="Content\img\pizzas\rucula com tomate seco 400x300.jpg" />
+    <Content Include="Content\img\pizza_we_luv_it.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\img\common\file-icons.png" />
     <Content Include="packages.config" />

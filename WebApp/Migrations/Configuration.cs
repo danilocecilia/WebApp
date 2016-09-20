@@ -55,7 +55,7 @@ namespace WebApp.Migrations
                     Filename = "mussarela.jpg"
                 },
             }
-            .Where(item => !context.Pizzas.Any(pizza => pizza.Name != item.Entity.Name))
+            .Where(item => !context.Pizzas.Any(pizza => pizza.Name == item.Entity.Name))
             .ToArray();
 
             var fileServices = new FileServices();

@@ -21,7 +21,7 @@
         IEnumerable<Pizza> GetAll();
 
         [OperationContract]
-        [WebInvoke(Method = "DELETE", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         void Delete(int id);
     }
 }

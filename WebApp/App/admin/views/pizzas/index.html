@@ -13,6 +13,8 @@
             </a>
             <h4>R$ {{pizza.Price}}</h4>
             <p><a href="#pizzas/editar/{{pizza.Id}}">{{pizza.Description}}</a></p>
+            <a class="pure-button button-secondary" href="#pizzas/editar/{{pizza.Id}}">Editar</a>
+            <a class="pure-button button-warning" ng-click="delete(pizza.Id, $index)">Deletar</a>
         </div>
     </div>
 </div>
